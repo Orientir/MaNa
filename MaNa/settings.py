@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'goods',
-    'djmoney',
     'ckeditor',
     'ckeditor_uploader',
 ]
