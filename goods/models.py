@@ -1,4 +1,4 @@
-from ckeditor_uploader.fields import RichTextUploadingField
+
 from djmoney.models.fields import MoneyField
 from django.utils.safestring import mark_safe
 from django.conf import settings
@@ -10,8 +10,8 @@ class Goods(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, help_text='автор', blank=True)
     slug = models.SlugField(max_length=128, blank=True)
     title = models.CharField(verbose_name='название', max_length=200, blank=True)
-    #description = models.TextField(verbose_name='описание')
-    description = RichTextUploadingField(blank=True)
+    description = models.TextField(verbose_name='описание')
+
     pln_price = MoneyField(verbose_name='злотые', help_text='цена в злотых', max_digits=14, decimal_places=2, default_currency='PLN')
     uah_price = MoneyField(verbose_name='гривна', help_text='цена в гривне', max_digits=14, decimal_places=2, default_currency='UAH')
     sale_price = MoneyField(verbose_name='цена', help_text='цена продажи', max_digits=14, decimal_places=2, default_currency='UAH')
